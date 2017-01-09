@@ -12,7 +12,8 @@
         "athletic/athletic": "^0.1",
         "eloquent/depict": "dev-master",
         "symfony/var-dumper": "^2|^3|^4|^5",
-        "mmucklo/krumo": "^0.5.7"
+        "mmucklo/krumo": "^0.5.7",
+        "raveren/kint": "^1.0"
     },
     "repositories": [
         {

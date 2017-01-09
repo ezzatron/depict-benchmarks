@@ -3,6 +3,7 @@
 namespace Eloquent\Depict;
 
 use Athletic\AthleticEvent;
+use Kint;
 use Krumo;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
@@ -52,5 +53,13 @@ class TypicalDataEvent extends AthleticEvent
     public function krumo()
     {
         Krumo::dump($this->data);
+    }
+
+    /**
+     * @iterations 100
+     */
+    public function kint()
+    {
+        Kint::dump($this->data);
     }
 }
