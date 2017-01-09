@@ -62,4 +62,12 @@ class RecursiveDataEvent extends AthleticEvent
     {
         Kint::dump($this->data);
     }
+
+    /**
+     * @iterations 100
+     */
+    public function phpRef()
+    {
+        rt($this->data);
+    }
 }

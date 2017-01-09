@@ -13,7 +13,8 @@
         "eloquent/depict": "dev-master",
         "symfony/var-dumper": "^2|^3|^4|^5",
         "mmucklo/krumo": "^0.5.7",
-        "raveren/kint": "^1.0"
+        "raveren/kint": "^1.0",
+        "digitalnature/php-ref": "^1.2"
     },
     "repositories": [
         {
