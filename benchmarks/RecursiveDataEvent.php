@@ -70,4 +70,12 @@ class RecursiveDataEvent extends AthleticEvent
     {
         rt($this->data);
     }
+
+    /**
+     * @iterations 100
+     */
+    public function dumpR()
+    {
+        dump_r($this->data);
+    }
 }
