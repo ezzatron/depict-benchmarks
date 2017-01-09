@@ -62,12 +62,4 @@ class TypicalDataEvent extends AthleticEvent
     {
         Kint::dump($this->data);
     }
-
-    /**
-     * @iterations 100
-     */
-    public function dumpR()
-    {
-        dump_r($this->data);
-    }
 }
