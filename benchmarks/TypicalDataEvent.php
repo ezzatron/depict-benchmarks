@@ -66,14 +66,6 @@ class TypicalDataEvent extends AthleticEvent
     /**
      * @iterations 100
      */
-    public function phpRef()
-    {
-        rt($this->data);
-    }
-
-    /**
-     * @iterations 100
-     */
     public function dumpR()
     {
         dump_r($this->data);
