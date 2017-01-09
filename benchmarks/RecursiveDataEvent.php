@@ -3,10 +3,11 @@
 namespace Eloquent\Depict;
 
 use Athletic\AthleticEvent;
+use Krumo;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
 
-class InlineExporterEvent extends AthleticEvent
+class RecursiveDataEvent extends AthleticEvent
 {
     protected function setUp()
     {
@@ -14,12 +15,19 @@ class InlineExporterEvent extends AthleticEvent
         $errorReporting = error_reporting();
         error_reporting($errorReporting & ~E_WARNING);
 
-        $this->data = require __DIR__ . '/data/typical.php';
+        $this->data = require __DIR__ . '/data/recursive.php';
 
         $this->depict = InlineExporter::create();
 
         $this->symfony = new CliDumper();
         $this->symfonyCloner = new VarCloner();
+
+        ob_start();
+    }
+
+    protected function tearDown()
+    {
+        ob_end_clean();
     }
 
     /**
@@ -36,5 +44,13 @@ class InlineExporterEvent extends AthleticEvent
     public function symfony()
     {
         $this->symfony->dump($this->symfonyCloner->cloneVar($this->data), true);
+    }
+
+    /**
+     * @iterations 100
+     */
+    public function krumo()
+    {
+        Krumo::dump($this->data);
     }
 }
