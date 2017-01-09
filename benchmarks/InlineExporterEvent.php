@@ -10,6 +10,10 @@ class InlineExporterEvent extends AthleticEvent
 {
     protected function setUp()
     {
+        // required for Symfony VarDumper 2.x
+        $errorReporting = error_reporting();
+        error_reporting($errorReporting & ~E_WARNING);
+
         $this->data = require __DIR__ . '/data/typical.php';
 
         $this->depict = InlineExporter::create();
